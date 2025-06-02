@@ -1,4 +1,98 @@
 ﻿@page
 @model DriveBotsWebsite.Pages.Home.AdminApplicationModel
 @{
+    ViewData["Title"] = "Manage Applications";
+    Layout = "_adminLayout";
+    var applications = new[]
+    {
+        new { ApplicantName = "Alice", ApplicationType = "Learner's License", Status = "Pending" },
+        new { ApplicantName = "Abby", ApplicationType = "Driver's License", Status = "Approved" },
+        new { ApplicantName = "Charles", ApplicationType = "Vehicle Registration", Status = "Rejected" }
+    };
 }
+<div class="container">
+    <div class="sidebar">
+
+        @Html.ActionLink(
+                 linkText: "Home",
+                 actionName: "Admin",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+        @Html.ActionLink(
+                 linkText: "Admin Applications",
+                 actionName: "AdminApplications",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+
+        @Html.ActionLink(
+                 linkText: "Transaction",
+                 actionName: "Transaction",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+        @Html.ActionLink(
+                 linkText: "Report and Analytics",
+                 actionName: "ReportandAnalytics",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+
+        @Html.ActionLink(
+                 linkText: "User Management",
+                 actionName: "Usermanagement",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+        @Html.ActionLink(
+                 linkText: "Settings",
+                 actionName: "AdminSettings",
+                 controllerName: "Home",
+                 routeValues: null,
+                 htmlAttributes: new { @class = "nav-item" }
+                 )
+
+    </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-box" />
+            <button type="submit" class="search-button">Search</button>
+        </div>
+
+        <div class="main-content">
+            <h1 class="page-title">Manage Applications</h1>
+            <p class="total-count">Total Applications: @applications.Length</p>
+
+            <table class="applications-table">
+                <thead>
+                    <tr>
+                        <th>Applicant Name</th>
+                        <th>Application Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var app in applications)
+                    {
+                        <tr>
+                            <td>@app.ApplicantName</td>
+                            <td>@app.ApplicationType</td>
+                            <td>@app.Status</td>
+                            <td>
+                                <button class="btn-approve">Approve</button>
+                                <button class="btn-reject">Reject</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+</div>
+

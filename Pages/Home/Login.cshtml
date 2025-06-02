@@ -1,0 +1,53 @@
+﻿@page
+@model DriveBotsWebsite.Pages.Home.LoginModel
+@{
+}
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Log in to your account</h2>
+        <p>
+            Don't have an account? @Html.ActionLink(
+            linkText: "Sign up now",
+            actionName: "SignUp",
+            controllerName: "Home",
+            routeValues: null,
+            htmlAttributes: new { @class = "nav-link text-dark" }
+            )
+        </p>
+
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Enter your email address" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="RememberMe">
+                        <input asp-for="RememberMe" />
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,78 @@
+﻿@page
+@model DriveBotsWebsite.Pages.AdminModel
+@{
+}
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+
+            @Html.ActionLink(
+                     linkText: "Home",
+                     actionName: "Admin",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+            @Html.ActionLink(
+                     linkText: "Admin Applications",
+                     actionName: "AdminApplications",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+
+            @Html.ActionLink(
+                     linkText: "Transaction",
+                     actionName: "Transaction",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+            @Html.ActionLink(
+                     linkText: "Report and Analytics",
+                     actionName: "ReportandAnalytics",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+
+            @Html.ActionLink(
+                     linkText: "User Management",
+                     actionName: "Usermanagement",
+                     controllerName: "Home",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+            @Html.ActionLink(
+                     linkText: "Settings",
+                     actionName: "AdminSettings",
+                     routeValues: null,
+                     htmlAttributes: new { @class = "nav-item" }
+                     )
+
+        </div>
+
+        <div class="main">
+            <header>
+                <h1>Welcome, Admin</h1>
+                <p>Here's a quick overview of current activity.</p>
+            </header>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Applications</h3>
+                    <p>3</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Approvals</h3>
+                    <p>213</p>
+                </div>
+                <div class="card">
+                    <h3>Transactions Today</h3>
+                    <p>74</p>
+                </div>
+                <div class="card">
+                    <h3>Approved Applications</h3>
+                    <p>467</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

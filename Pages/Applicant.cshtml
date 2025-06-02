@@ -1,0 +1,51 @@
+﻿@page
+@model DriveBotsWebsite.Pages.ApplicantModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/applicant.css" />
+</head>
+<body>
+    @using (Html.BeginForm("SignUp", "SignUp", FormMethod.Post))
+    {
+        <div class="dashboard">
+            <div class="dashboard-buttons">
+                <li>
+                    <a asp-page="/Applicants/LicenseApplications/Create" class="btn btn-primary">Start New Application</a>
+                </li>
+
+                <form asp-action="Logout" asp-controller="Account" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </form>
+            </div>
+
+            <h1>Welcome, @User.Identity.Name!</h1>
+            <p>Your application dashboard</p>
+
+        </div>
+    }
+
+
+    <div class="dashboard-wrapper">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+                <li>
+                    <a asp-action="Applicant" >Home</a>
+                </li>
+                <li>
+                    <a asp-page="/History">Applications</a>
+                </li>
+                <li>
+                    <a asp-page="/Appointments">Appointments</a>
+                </li>
+                <li>
+                    <a asp-page="/Payments">Payments</a>
+                </li>
+
+        </div>
+
+    </div>
+
+
+</body>

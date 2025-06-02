@@ -1,0 +1,71 @@
+﻿@page
+@model DriveBotsWebsite.Pages.Applicants.LicenseApplications.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LicenseApplication</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.UserId" class="control-label"></label>
+                <input asp-for="LicenseApplication.UserId" class="form-control" />
+                <span asp-validation-for="LicenseApplication.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.FirstName" class="control-label"></label>
+                <input asp-for="LicenseApplication.FirstName" class="form-control" />
+                <span asp-validation-for="LicenseApplication.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.LastName" class="control-label"></label>
+                <input asp-for="LicenseApplication.LastName" class="form-control" />
+                <span asp-validation-for="LicenseApplication.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.Email" class="control-label"></label>
+                <input asp-for="LicenseApplication.Email" class="form-control" />
+                <span asp-validation-for="LicenseApplication.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.Address" class="control-label"></label>
+                <input asp-for="LicenseApplication.Address" class="form-control" />
+                <span asp-validation-for="LicenseApplication.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.ApplicationType" class="control-label"></label>
+                <input asp-for="LicenseApplication.ApplicationType" class="form-control" />
+                <span asp-validation-for="LicenseApplication.ApplicationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.LicenceClass" class="control-label"></label>
+                <input asp-for="LicenseApplication.LicenceClass" class="form-control" />
+                <span asp-validation-for="LicenseApplication.LicenceClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.UploadedFilePath" class="control-label"></label>
+                <input asp-for="LicenseApplication.UploadedFilePath" class="form-control" />
+                <span asp-validation-for="LicenseApplication.UploadedFilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseApplication.SubmittedAt" class="control-label"></label>
+                <input asp-for="LicenseApplication.SubmittedAt" class="form-control" />
+                <span asp-validation-for="LicenseApplication.SubmittedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

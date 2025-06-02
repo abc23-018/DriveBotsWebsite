@@ -1,0 +1,65 @@
+﻿@page
+@model DriveBots.Views.Home.HistoryModel
+@{
+}
+<div class="history-container">
+
+        <section class="appointment-history mt-5">
+            <h2>Scheduled Appointments</h2>
+
+            
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Appointment Type</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var apt in Model.Appointments)
+                            {
+                                <tr>
+                                    <td>@apt.AppointmentType</td>
+                                    <td>@apt.Date.ToString("yyyy-MM-dd")</td>
+                                    <td>@apt.Location</td>
+                                    <td>@apt.Email</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+        </section>
+
+
+    <div>
+        <h3>Debug Information</h3>
+        <p>Model is null: @(Model == null)</p>
+        @if (Model != null)
+        {
+            <p>Appointments count: @Model.Appointments?.Count</p>
+            @if (Model.Appointments?.Any() == true)
+            {
+                <p>First appointment email: @Model.Appointments.First().Email</p>
+            }
+        }
+    </div>
+
+</div>
+
+<style>
+    .history-container {
+        margin: 20px;
+    }
+
+    .table {
+        margin-top: 15px;
+    }
+
+    .alert {
+        margin-top: 10px;
+    }
+</style>

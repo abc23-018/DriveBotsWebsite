@@ -1,55 +1,20 @@
 ﻿@page
 @model DriveBotsWebsite.Pages.AdminModel
 @{
-    ViewData["Title"] = "Admin Dashboard";
-    Layout = "_adminLayout";
+    ViewData["Title"] = "Applicant Dashboard";
+   
 }
 <body>
     <div class="container">
-
         <div class="sidebar">
-
-            @Html.ActionLink(
-                     linkText: "Home",
-                     actionName: "Admin",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-            @Html.ActionLink(
-                     linkText: "Admin Applications",
-                     actionName: "AdminApplications",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-
-            @Html.ActionLink(
-                     linkText: "Transaction",
-                     actionName: "Transaction",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-            @Html.ActionLink(
-                     linkText: "Report and Analytics",
-                     actionName: "ReportandAnalytics",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-
-            @Html.ActionLink(
-                     linkText: "User Management",
-                     actionName: "Usermanagement",
-                     controllerName: "Home",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-            @Html.ActionLink(
-                     linkText: "Settings",
-                     actionName: "AdminSettings",
-                     routeValues: null,
-                     htmlAttributes: new { @class = "nav-item" }
-                     )
-
+            <a href="Applicant.cshtml">Home</a>
+            <a href="Applicantapplication.cshtml">Applications</a>
+            <a href="Appointment.cshtml">Appointment</a>
+            <a href="Payment.cshtml">Payment</a>
+            <a href="AdminSettings.cshtml">Settings</a>
         </div>
+
+    
 
         <div class="main">
             <header>

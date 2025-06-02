@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Pages\images\" />
     <Folder Include="Pages\Admin\" />
   </ItemGroup>
 

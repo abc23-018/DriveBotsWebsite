@@ -103,7 +103,7 @@ namespace DriveBotsWebsite.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Content("~/Applicant");
+            returnUrl ??= Url.Content("~/Home/Applicant");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 

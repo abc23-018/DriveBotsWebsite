@@ -1,0 +1,76 @@
+﻿@page
+@model DriveBotsWebsite.Pages.ApplicantModel
+@{
+    ViewData["Title"] = "Applicant Dashboard";
+    Layout = "_applicantLayout";
+}
+<head>
+    <link rel="stylesheet" href="~/css/applicant.css" />
+</head>
+<body>
+    @using (Html.BeginForm("SignUp", "SignUp", FormMethod.Post))
+    {
+        <div class="dashboard">
+            <div class="dashboard-buttons">
+                <li>
+                    <a asp-page="/Applicants/LicenseApplications/Create" class="btn btn-primary">Start New Application</a>
+                </li>
+
+                <form asp-action="Logout" asp-controller="Account" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </form>
+            </div>
+
+            <h1>Welcome, @User.Identity.Name!</h1>
+            <p>Your application dashboard</p>
+
+        </div>
+    }
+
+
+    <div class="dashboard-wrapper">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            @Html.ActionLink(
+                     linkText: "Home",
+                     actionName: "Applicant",
+                     controllerName: "Home",
+                     routeValues: null
+                     )
+
+            @Html.ActionLink(
+                     linkText: "Applications",
+                     actionName: "Applications",
+                     controllerName: "Home",
+                     routeValues: null
+                     )
+
+            @Html.ActionLink(
+                     linkText: "Appointments",
+                     actionName: "Appointments",
+                     controllerName: "Home",
+                     routeValues: null
+                     )
+
+            @Html.ActionLink(
+                     linkText: "Payments",
+                     actionName: "Payment",
+                     controllerName: "Home",
+                     routeValues: null
+                     )
+
+            @Html.ActionLink(
+                     linkText: "Settings",
+                     actionName: "ApplicantSettings",
+                     controllerName: "Home",
+                     routeValues: null
+                     )
+
+        </div>
+
+    </div>
+
+
+</body>
